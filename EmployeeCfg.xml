@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+ "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<bean id = "employee" class="com.kavita.basic.model.Employee">
+        <property name = "empId"        value="1"> </property>
+        <property name = "empName"      value="Pooja Dange"></property>
+        <property name = "empPanCardNo" value="228377374737"></property>
+        <property name = "empGender"    value="f"></property>
+        <property name = "empAadharNo"  value="898993763427"></property>
+        <property name = "empSal"       value="89899.00"></property>
+        <property name = "empVoterId"   value="61238475691"></property>
+        <property name = "empAccountNo" value="2874774874844"></property>
+        <property name = "empMarriedStatus" value="UnMarried"></property>
+        <property name = "empEmail"      value="pooja@gmail.com"></property>     
+        <property name = "empDateOfBirth"   ref="date"></property>   
+        <property name = "empDateOfJoining" ref="date1"></property>
+        <property name = "empDept"       ref="dept"></property>
+        
+        <property name = "empMobileNo">
+            <list>
+                <value>8856453245</value>
+                <value>9933765656</value>
+                <value>7894565456</value>               
+            </list>
+        </property>
+                                
+        <property name = "empAddress">
+            <set>
+                <ref bean="address"></ref>
+                <ref bean="address1"></ref>
+           </set>
+       </property>
+                
+       <property name = "empProjectInfo">
+            <map>
+                <entry key = "1" value-ref="project"></entry>
+       		    <entry key = "2" value-ref="project1"></entry>                
+           </map>
+      </property>
+
+      <property name = "skill">
+            <list>
+                 <value>Leadership</value>
+                 <value>Problem solving</value>
+                 <value>Adaptabilty</value>
+                 <value>Coding</value>
+                 <value>Critical Thinking</value>
+           </list>
+           </property>               
+</bean>
+      
+<bean id = "date" class="java.util.Date">
+        <property name = "date"    value="08"></property>
+        <property name = "month"   value="23"></property>
+        <property name = "year"    value="95"></property>
+       
+</bean>
+<bean id = "date1" class="java.util.Date">
+        <property name = "date"    value="01"></property>
+        <property name = "month"   value="12"></property>
+        <property name = "year"    value="118"></property>
+       
+</bean>
+
+<bean id = "address" class="com.kavita.basic.model.Address">
+        <property name = "houseNo"    value="101"></property>
+        <property name = "houseName"  value="OMSAI"></property>
+        <property name = "streetName" value="Dwarka Circle"></property>
+        <property name = "city"       value="Shirdi"></property>
+        <property name = "pinCode"    value="123456"></property>
+        <property name = "state"      value="Maharashtra"></property>
+        <property name = "country"    value="India"></property>
+</bean>
+
+<bean id = "address1" class="com.kavita.basic.model.Address">
+        <property name = "houseNo"    value="444"></property>
+        <property name = "houseName"  value="SAIRAM"></property>
+        <property name = "streetName" value="Kalika Road"></property>
+        <property name = "city"       value="Pune"></property>
+        <property name = "pinCode"    value="126756"></property>
+        <property name = "state"      value="Maharashtra"></property>
+        <property name = "country"    value="India"></property>
+</bean>
+
+<bean id = "project" class="com.kavita.basic.model.Project">
+       <property name="projectId" value = "1"></property>
+       <property name="projectName" value = "Spring"></property>
+       <property name="projectDuration" value = "90 Hrs"></property>
+       <property name="projectCompletionDate" ref = "date"></property>
+
+</bean>
+
+<bean id = "project1" class="com.kavita.basic.model.Project">
+       <property name="projectId" value = "2"></property>
+       <property name="projectName" value = "Bank"></property>
+       <property name="projectDuration" value = "95 Hrs"></property>
+       <property name="projectCompletionDate" ref = "date1"></property>
+
+</bean>
+<bean id ="dept" class="com.kavita.basic.model.Department">
+       <property name="departmentId" value = "10"></property>
+       <property name="departmentName" value = "Java"></property>
+       <property name="departmentSubject" value = "Testing"></property>
+</bean>
+</beans>
